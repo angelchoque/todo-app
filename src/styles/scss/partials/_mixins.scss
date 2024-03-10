@@ -1,0 +1,109 @@
+// 375px 640px 1024px 1440px
+$breakpoints-up: ("small": "375px", "medium": "640px", "large": "1024px", "xlarge": "1440px");
+
+// 374px 639px 1023px 1439px
+$breakpoints-down: ("xsmall": "374px", "small": "639px", "medium": "1023px", "large": "1439px");
+
+/* breakpoints */
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+/* flex box rules */
+@mixin flex-row ($js, $al) {
+  display: flex;
+  flex-direction: row;
+  align-items: $al;
+  justify-content: $js;
+}
+@mixin flex-column ($js, $al) {
+  display: flex;
+  flex-direction: column;
+  align-items: $al;
+  justify-content: $js;
+}
+
+@mixin scroll_bar ($bar_width, $bar_color) {
+  scrollbar-color: $bar_color;
+  scrollbar-width: $bar_width;
+
+  &::-webkit-scrollbar {
+    width: $bar_width;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $bar_color;
+  }
+}/* main style */
+@mixin task-component-styles () {
+  @include flex-row (flex-start,center);
+  padding: 3vw 5vw;
+  border-radius: $border-radius-size-sm;
+
+  @include breakpoint-up (medium) {
+    padding: 1.5vw 2.5vw;
+    border-radius: $border-radius-size-l;
+  }
+}
+@mixin task-content-styles () {
+  width: 100%;
+  font-size: 3vw;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  @include breakpoint-up (medium) {
+    font-size: 1.5vw;
+  }
+}
+@mixin task-btn-style () {
+  width: $input-btn-w-sm;
+  height: $input-btn-w-sm;
+  margin-right: 4vw;
+  border-radius: 100px;
+  border: solid 1px $input-checkBox-border-color;
+
+  @include breakpoint-up (medium) {
+    width: $input-btn-w-l;
+    height: $input-btn-w-l;
+    margin-right: 2vw;
+  }
+}
+@mixin task-controls-font-styles () {
+  font-size: 2.7vw;
+  @include breakpoint-up (medium) {
+    font-size: 1.3vw;
+  }
+  @include breakpoint-up (large) {
+    font-size: 1.1vw;
+  }
+}/* Theme related styles */
+@mixin task-bg-color ($mode) {
+  @if $mode == "light" {
+    background-color: $veryLightGray;
+  }  @else if $mode == "dark" {
+    background-color: $veryDarkDesaturatedBlue;
+  }
+}
+@mixin task-color ($mode) {
+  @if $mode == "light" {
+    color: $veryDarkGrayishBlue_light;
+  }  @else if $mode == "dark" {
+    color: $lightGrayishBlue_dark1;
+  }
+}
+@mixin controls-color ($mode) {
+  @if $mode == "light" {
+    color: $darkGrayishBlue_light;
+  }  @else if $mode == "dark" {
+    color: $veryDarkGrayishBlue_light;
+  }
+}

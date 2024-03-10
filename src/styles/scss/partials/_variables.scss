@@ -1,0 +1,37 @@
+// Colors
+
+// Primary
+$brightBlue: hsl(220, 98%, 61%);
+$checkBackground: linear-gradient(
+  90deg,
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
+
+// Neutral
+
+// Light Theme
+$veryLightGray: hsl(0, 0%, 98%);
+$veryLightGrayishBlue: hsl(236, 33%, 92%);
+$lightGrayishBlue_light: hsl(233, 11%, 84%);
+$darkGrayishBlue_light: hsl(236, 9%, 61%);
+$veryDarkGrayishBlue_light: hsl(235, 19%, 35%);
+
+// Dark Theme
+$veryDarkBlue: hsl(235, 21%, 11%);
+$veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+$lightGrayishBlue_dark1: hsl(234, 39%, 85%);
+$lightGrayishBlue_dark2: hsl(236, 33%, 92%);
+$darkGrayishBlue_dark: hsl(234, 11%, 52%);
+$veryDarkGrayishBlue_dark1: hsl(233, 14%, 35%);
+$veryDarkGrayishBlue_dark2: hsl(237, 14%, 26%);
+
+$input-checkBox-border-color: $lightGrayishBlue_light;
+$input-btn-w-sm: 6vw;
+$input-btn-w-l: 2.5vw;
+
+$border-radius-size-sm: 1.5vw;
+$border-radius-size-l: 0.5vw;
+
+$component-box-shadow-light: 1px 3px 20px 0px #9e9a9a5c;
+$component-box-shadow-dark: 1px 3px 20px 0px #0f1015;
